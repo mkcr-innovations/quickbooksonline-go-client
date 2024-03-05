@@ -1,7 +1,7 @@
 package services
 
 import (
-	"quickbooksonline-go-client/pkg/types"
+	"github.com/mkcr-innovations/quickbooksonline-go-client/pkg/types"
 )
 
 // BaseService is a generic service type with shared functionality

@@ -2,8 +2,9 @@ package client
 
 import (
 	"fmt"
-	"quickbooksonline-go-client/internal/services"
-	"quickbooksonline-go-client/pkg/types"
+
+	"github.com/mkcr-innovations/quickbooksonline-go-client/internal/services"
+	"github.com/mkcr-innovations/quickbooksonline-go-client/pkg/types"
 )
 
 type Client struct {

@@ -5,8 +5,9 @@ import (
 	"fmt"
 	"io"
 	"net/http"
-	"quickbooksonline-go-client/pkg/types"
 	"reflect"
+
+	"github.com/mkcr-innovations/quickbooksonline-go-client/pkg/types"
 )
 
 func HandleResponse(resp *http.Response, respVar interface{}) error {

@@ -4,9 +4,10 @@ import (
 	"fmt"
 	"net/http"
 	"net/url"
-	"quickbooksonline-go-client/pkg/types"
 	"reflect"
 	"strings"
+
+	"github.com/mkcr-innovations/quickbooksonline-go-client/pkg/types"
 )
 
 // QueryBuilder struct to hold parts of our SQL query

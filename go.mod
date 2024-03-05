@@ -1,4 +1,4 @@
-module quickbooksonline-go-client
+module github.com/mkcr-innovations/quickbooksonline-go-client
 
 go 1.22
 
