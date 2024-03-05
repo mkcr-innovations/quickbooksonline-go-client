@@ -6,8 +6,7 @@ import (
 
 // Customer represents a QuickBooks Online customer entity.
 type Customer struct {
-	Id                      string                `json:"Id"`                                // Read-only, system-defined
-	SyncToken               string                `json:"SyncToken"`                         // Read-only, system-defined
+	BaseEntity
 	DisplayName             string                `json:"DisplayName"`                       // Conditionally required
 	Title                   string                `json:"Title"`                             // Conditionally required, max 16 chars
 	GivenName               string                `json:"GivenName"`                         // Conditionally required, max 100 chars

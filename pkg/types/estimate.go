@@ -1,9 +1,8 @@
 package types
 
 type Estimate struct {
-	Id                      string                `json:"Id"` // Read only, Required for update, System defined
+	BaseEntity
 	CustomerRef             Ref                   `json:"CustomerRef"`
-	SyncToken               string                `json:"SyncToken"`                         // Read only, Required for update, System defined
 	ShipFromAddr            *PhysicalAddress      `json:"ShipFromAddr,omitempty"`            // Conditionally required, minorVersion: 35
 	CurrencyRef             Ref                   `json:"CurrencyRef"`                       // Conditionally required
 	BillEmail               EmailAddress          `json:"BillEmail"`                         // Conditionally required

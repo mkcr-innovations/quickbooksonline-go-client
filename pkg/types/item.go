@@ -1,10 +1,9 @@
 package types
 
 type Item struct {
-	Id                   string                `json:"Id"`                         // Read-only, system defined, required for update
+	BaseEntity
 	ItemCategoryType     *string               `json:"ItemCategoryType,omitempty"` // Required, minorVersion: 3
 	Name                 string                `json:"Name"`
-	SyncToken            string                `json:"SyncToken"`                      // Required for update
 	InvStartDate         string                `json:"InvStartDate"`                   // Conditionally required
 	Type                 *string               `json:"Type,omitempty"`                 // Conditionally required, minorVersion: specified
 	QtyOnHand            *float64              `json:"QtyOnHand,omitempty"`            // Conditionally required

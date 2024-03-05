@@ -2,8 +2,7 @@ package types
 
 // Employee represents a QuickBooks Online Employee entity.
 type Employee struct {
-	Id               string                `json:"Id,omitempty"`          // Required for update, system defined, read only
-	SyncToken        string                `json:"SyncToken,omitempty"`   // Required for update, system defined, read only
+	BaseEntity
 	PrimaryAddr      *PhysicalAddress      `json:"PrimaryAddr,omitempty"` // Conditionally required
 	PrimaryEmailAddr *EmailAddress         `json:"PrimaryEmailAddr,omitempty"`
 	DisplayName      *string               `json:"DisplayName,omitempty"` // Optional, max 500 chars

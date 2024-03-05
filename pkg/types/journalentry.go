@@ -1,9 +1,8 @@
 package types
 
 type JournalEntry struct {
-	Id                      string                `json:"Id"`                                // Required for update, read only, system defined
+	BaseEntity
 	Line                    []Line                `json:"Line"`                              // Required
-	SyncToken               string                `json:"SyncToken"`                         // Required for update, read only, system defined
 	CurrencyRef             *Ref                  `json:"CurrencyRef,omitempty"`             // Conditionally required
 	DocNumber               *string               `json:"DocNumber,omitempty"`               // Optional
 	PrivateNote             *string               `json:"PrivateNote,omitempty"`             // Optional

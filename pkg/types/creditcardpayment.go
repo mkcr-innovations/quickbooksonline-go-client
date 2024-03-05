@@ -1,11 +1,10 @@
 package types
 
 type CreditCardPayment struct {
-	Id                   string                `json:"Id"`                    // Required for update, read only, system defined
+	BaseEntity
 	CreditCardAccountRef Ref                   `json:"CreditCardAccountRef"`  // Required
 	Amount               float64               `json:"Amount"`                // Required
 	BankAccountRef       Ref                   `json:"BankAccountRef"`        // Required
-	SyncToken            string                `json:"SyncToken"`             // Required for update, read only, system defined
 	PrivateNote          *string               `json:"PrivateNote,omitempty"` // Optional, Max of 4000 chars
 	VendorRef            *Ref                  `json:"VendorRef,omitempty"`   // Optional, minorVersion: 54
 	TxnDate              *string               `json:"TxnDate,omitempty"`     // Optional, Date

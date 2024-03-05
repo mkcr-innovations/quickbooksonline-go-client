@@ -25,6 +25,14 @@ type BasePaginatedResponse struct {
 	MaxResults    int `json:"maxResults"`
 }
 
+// Base Entity
+type BaseEntity struct {
+	Id        string `json:"Id"`
+	SyncToken string `json:"SyncToken"`
+	Domain    string `json:"domain"`
+	Sparse    bool   `json:"sparse"`
+}
+
 // Common types
 type ModificationMetaData struct {
 	CreateTime      time.Time `json:"CreateTime"`

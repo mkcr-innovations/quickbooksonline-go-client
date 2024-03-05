@@ -5,10 +5,9 @@ import (
 )
 
 type Invoice struct {
-	Id                           string                `json:"Id,omitempty"` // Read only, System defined
+	BaseEntity
 	Line                         []Line                `json:"Line"`
 	CustomerRef                  Ref                   `json:"CustomerRef"`
-	SyncToken                    string                `json:"SyncToken,omitempty"`    // Read only, System defined
 	ShipFromAddr                 *PhysicalAddress      `json:"ShipFromAddr,omitempty"` // Conditionally required, minorVersion: 35
 	CurrencyRef                  Ref                   `json:"CurrencyRef"`
 	DocNumber                    string                `json:"DocNumber"`

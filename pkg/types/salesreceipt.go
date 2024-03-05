@@ -1,10 +1,9 @@
 package types
 
 type SalesReceipt struct {
-	Id                      string                       `json:"Id"`                                // Conditionally required for update
+	BaseEntity
 	Line                    []Line                       `json:"Line"`                              // Required
 	CustomerRef             Ref                          `json:"CustomerRef"`                       // Required
-	SyncToken               string                       `json:"SyncToken"`                         // Conditionally required for update
 	ShipFromAddr            *PhysicalAddress             `json:"ShipFromAddr,omitempty"`            // Conditionally required, minorVersion: 35
 	CurrencyRef             *Ref                         `json:"CurrencyRef,omitempty"`             // Conditionally required
 	BillEmail               *EmailAddress                `json:"BillEmail,omitempty"`               // Conditionally required

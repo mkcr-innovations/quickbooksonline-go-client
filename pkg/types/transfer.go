@@ -1,11 +1,10 @@
 package types
 
 type Transfer struct {
-	Id                      string                `json:"Id"`                                // Required for update, read only, system defined
+	BaseEntity
 	ToAccountRef            Ref                   `json:"ToAccountRef"`                      // Required
 	Amount                  float64               `json:"Amount"`                            // Required
 	FromAccountRef          Ref                   `json:"FromAccountRef"`                    // Required
-	SyncToken               string                `json:"SyncToken"`                         // Required for update, read only, system defined
 	PrivateNote             *string               `json:"PrivateNote,omitempty"`             // Optional, Max of 4000 chars
 	TxnDate                 *string               `json:"TxnDate,omitempty"`                 // Optional, Date
 	TransactionLocationType *string               `json:"TransactionLocationType,omitempty"` // Optional, minorVersion: 4

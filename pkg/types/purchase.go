@@ -1,11 +1,10 @@
 package types
 
 type Purchase struct {
-	Id                      string                `json:"Id"`                                // Read only, system defined, required for update
+	BaseEntity
 	Line                    []Line                `json:"Line"`                              // Required
 	PaymentType             string                `json:"PaymentType"`                       // Required
 	AccountRef              Ref                   `json:"AccountRef"`                        // Required
-	SyncToken               string                `json:"SyncToken"`                         // Read only, system defined, required for update
 	CurrencyRef             *Ref                  `json:"CurrencyRef,omitempty"`             // Conditionally required
 	TxnDate                 *string               `json:"TxnDate,omitempty"`                 // Optional, format YYYY-MM-DD
 	PrintStatus             *string               `json:"PrintStatus,omitempty"`             // Optional

@@ -1,8 +1,7 @@
 package types
 
 type Attachable struct {
-	Id                       string                `json:"Id"`                       // Read only, system defined
-	SyncToken                string                `json:"SyncToken"`                // Read only, system defined
+	BaseEntity
 	FileName                 *string               `json:"FileName,omitempty"`       // Conditionally required, max 1000 chars
 	Note                     *string               `json:"Note,omitempty"`           // Conditionally required, max 2000 chars
 	Category                 *string               `json:"Category,omitempty"`       // Optional, max 100 chars

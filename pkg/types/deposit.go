@@ -1,10 +1,9 @@
 package types
 
 type Deposit struct {
-	Id                      string                `json:"Id"` // Read Only, System Defined
+	BaseEntity
 	DepositToAccountRef     Ref                   `json:"DepositToAccountRef"`
 	Lines                   []Line                `json:"Line"`                              // Required
-	SyncToken               *string               `json:"SyncToken,omitempty"`               // Read Only, System Defined
 	CurrencyRef             *Ref                  `json:"CurrencyRef,omitempty"`             // Conditionally Required
 	PrivateNote             *string               `json:"PrivateNote,omitempty"`             // Optional, Max character: max of 4000 chars
 	GlobalTaxCalculation    *string               `json:"GlobalTaxCalculation,omitempty"`    // Optional, minorVersion: 3

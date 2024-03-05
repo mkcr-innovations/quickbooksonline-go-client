@@ -1,8 +1,7 @@
 package types
 
 type Vendor struct {
-	Id                      string                   `json:"Id"`
-	SyncToken               string                   `json:"SyncToken"`
+	BaseEntity
 	Title                   *string                  `json:"Title,omitempty"`
 	GivenName               *string                  `json:"GivenName,omitempty"`
 	MiddleName              *string                  `json:"MiddleName,omitempty"`

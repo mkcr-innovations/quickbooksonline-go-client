@@ -1,10 +1,9 @@
 package types
 
 type RefundReceipt struct {
-	Id                      string                       `json:"Id"` // Read only, System defined
+	BaseEntity
 	DepositToAccountRef     Ref                          `json:"DepositToAccountRef"`
 	Lines                   []Line                       `json:"Lines"`
-	SyncToken               *string                      `json:"SyncToken,omitempty"`     // Read only, System defined
 	CurrencyRef             *Ref                         `json:"CurrencyRef,omitempty"`   // Conditionally required
 	PaymentRefNum           *string                      `json:"PaymentRefNum,omitempty"` // Conditionally required
 	BillEmail               *EmailAddress                `json:"BillEmail,omitempty"`     // Conditionally required

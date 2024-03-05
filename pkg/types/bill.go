@@ -1,10 +1,9 @@
 package types
 
 type Bill struct {
-	Id                      string                `json:"Id"`
+	BaseEntity
 	VendorRef               Ref                   `json:"VendorRef"`
 	Line                    []Line                `json:"Line"`
-	SyncToken               string                `json:"SyncToken"`
 	CurrencyRef             Ref                   `json:"CurrencyRef"`
 	TxnDate                 *string               `json:"TxnDate,omitempty"`
 	APAccountRef            *Ref                  `json:"APAccountRef,omitempty"`
@@ -24,9 +23,6 @@ type Bill struct {
 	HomeBalance             *float64              `json:"HomeBalance,omitempty"`
 	RecurDataRef            *Ref                  `json:"RecurDataRef,omitempty"`
 	Balance                 float64               `json:"Balance"`
-
-	Sparse bool   `json:"sparse"`
-	Domain string `json:"domain"`
 }
 
 type BillPaginatedResponse struct {

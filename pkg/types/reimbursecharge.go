@@ -1,11 +1,10 @@
 package types
 
 type ReimburseCharge struct {
-	Id              string                `json:"Id"`                     // Optional, Read Only, System Defined
+	BaseEntity
 	Lines           []Line                `json:"Line"`                   // Required
 	Amount          float64               `json:"Amount"`                 // Required
 	CustomerRef     Ref                   `json:"CustomerRef"`            // Required
-	SyncToken       *string               `json:"SyncToken"`              // Required for update, Read Only, System Defined
 	CurrencyRef     *Ref                  `json:"CurrencyRef,omitempty"`  // Conditionally Required
 	PrivateNote     *string               `json:"PrivateNote,omitempty"`  // Optional
 	LinkedTxn       []LinkedTxn           `json:"LinkedTxn,omitempty"`    // Optional

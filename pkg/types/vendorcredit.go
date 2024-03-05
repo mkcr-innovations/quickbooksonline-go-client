@@ -1,10 +1,9 @@
 package types
 
 type VendorCredit struct {
-	Id                      string                `json:"Id"`                                // Required for update
+	BaseEntity
 	VendorRef               Ref                   `json:"VendorRef"`                         // Required
 	Lines                   []Line                `json:"Lines"`                             // Required
-	SyncToken               string                `json:"SyncToken"`                         // Required for update, thus pointer and omitempty
 	CurrencyRef             *Ref                  `json:"CurrencyRef,omitempty"`             // Conditionally required, thus pointer and omitempty
 	DocNumber               *string               `json:"DocNumber,omitempty"`               // Optional
 	PrivateNote             *string               `json:"PrivateNote,omitempty"`             // Optional

@@ -1,10 +1,9 @@
 package types
 
 type CreditMemo struct {
-	Id                      string                `json:"Id,omitempty"`                      // Read-only, system-defined
+	BaseEntity
 	Line                    []Line                `json:"Line"`                              // Required
 	CustomerRef             Ref                   `json:"CustomerRef"`                       // Required
-	SyncToken               string                `json:"SyncToken"`                         // Required for update, read-only, system-defined
 	CurrencyRef             *Ref                  `json:"CurrencyRef,omitempty"`             // Conditionally required
 	BillEmail               *EmailAddress         `json:"BillEmail,omitempty"`               // Conditionally required
 	TxnDate                 *string               `json:"TxnDate,omitempty"`                 // Optional, format "YYYY-MM-DD"

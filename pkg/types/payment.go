@@ -1,10 +1,9 @@
 package types
 
 type Payment struct {
-	Id                      string                       `json:"Id"` // ReadOnly, SystemDefined
+	BaseEntity
 	TotalAmt                float64                      `json:"TotalAmt"`
 	CustomerRef             Ref                          `json:"CustomerRef"`
-	SyncToken               string                       `json:"SyncToken"`             // ReadOnly, SystemDefined
 	CurrencyRef             *Ref                         `json:"CurrencyRef,omitempty"` // Conditionally Required
 	PrivateNote             *string                      `json:"PrivateNote,omitempty"` // Max of 4000 chars
 	PaymentMethodRef        *Ref                         `json:"PaymentMethodRef,omitempty"`

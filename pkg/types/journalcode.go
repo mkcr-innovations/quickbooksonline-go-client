@@ -1,16 +1,12 @@
 package types
 
 type JournalCode struct {
-	Id          string                `json:"Id"`
+	BaseEntity
 	Name        string                `json:"Name"`
-	SyncToken   string                `json:"SyncToken"`
 	Description *string               `json:"Description,omitempty"`
 	CustomField []CustomField         `json:"CustomField,omitempty"`
 	Type        *string               `json:"Type,omitempty"`
 	MetaData    *ModificationMetaData `json:"MetaData,omitempty"`
-
-	Domain string `json:"domain"`
-	Sparse bool   `json:"sparse"`
 }
 
 type JournalCodePaginatedResponse struct {

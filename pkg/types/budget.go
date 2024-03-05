@@ -5,10 +5,9 @@ import (
 )
 
 type Budget struct {
-	Id              string                `json:"Id"` // Although marked as required for update, it is read-only and system defined, hence not a pointer.
+	BaseEntity
 	EndDate         time.Time             `json:"EndDate"`
 	StartDate       time.Time             `json:"StartDate"`
-	SyncToken       string                `json:"SyncToken"`                 // Although marked as required for update, it is read-only and system defined, hence not a pointer.
 	BudgetEntryType *string               `json:"BudgetEntryType,omitempty"` // Optional
 	Name            *string               `json:"Name,omitempty"`            // Optional
 	BudgetDetail    []BudgetDetail        `json:"BudgetDetail,omitempty"`    // Optional

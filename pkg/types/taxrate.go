@@ -5,8 +5,7 @@ import (
 )
 
 type TaxRate struct {
-	Id               *string               `json:"Id,omitempty"`               // ReadOnly, SystemDefined
-	SyncToken        string                `json:"SyncToken"`                  // Required for update, ReadOnly, SystemDefined
+	BaseEntity
 	RateValue        *float64              `json:"RateValue,omitempty"`        // Optional, ReadOnly
 	Name             *string               `json:"Name,omitempty"`             // Optional, ReadOnly, MaxChars: 100
 	AgencyRef        *Ref                  `json:"AgencyRef,omitempty"`        // Optional, ReadOnly

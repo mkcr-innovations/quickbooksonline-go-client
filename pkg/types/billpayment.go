@@ -1,12 +1,11 @@
 package types
 
 type BillPayment struct {
-	Id                      string                 `json:"Id"` // Read only, system defined
+	BaseEntity
 	VendorRef               Ref                    `json:"VendorRef"`
 	Lines                   []Line                 `json:"Lines"`
 	TotalAmt                float64                `json:"TotalAmt"`
 	PayType                 string                 `json:"PayType"`
-	SyncToken               string                 `json:"SyncToken"`             // Read only, system defined
 	CurrencyRef             *Ref                   `json:"CurrencyRef,omitempty"` // Conditionally required
 	DocNumber               *string                `json:"DocNumber,omitempty"`
 	PrivateNote             *string                `json:"PrivateNote,omitempty"`

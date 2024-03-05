@@ -1,11 +1,10 @@
 package types
 
 type PurchaseOrder struct {
-	Id                      string                `json:"Id"` // Required for update, hence not a pointer.
+	BaseEntity
 	APAccountRef            Ref                   `json:"APAccountRef"`
 	VendorRef               Ref                   `json:"VendorRef"`
 	Line                    []Line                `json:"Line"`
-	SyncToken               string                `json:"SyncToken"`             // Required for update, hence not a pointer.
 	CurrencyRef             *Ref                  `json:"CurrencyRef,omitempty"` // Conditionally required, treated as optional.
 	TxnDate                 *string               `json:"TxnDate,omitempty"`
 	CustomField             []CustomField         `json:"CustomField,omitempty"`

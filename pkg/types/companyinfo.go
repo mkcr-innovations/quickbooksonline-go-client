@@ -1,8 +1,7 @@
 package types
 
 type CompanyInfo struct {
-	Id                        string                `json:"Id"`
-	SyncToken                 string                `json:"SyncToken"`
+	BaseEntity
 	CompanyName               string                `json:"CompanyName"`
 	CompanyAddr               Address               `json:"CompanyAddr"`
 	LegalAddr                 *Address              `json:"LegalAddr,omitempty"`
@@ -17,9 +16,6 @@ type CompanyInfo struct {
 	LegalName                 *string               `json:"LegalName,omitempty"`
 	MetaData                  *ModificationMetaData `json:"MetaData,omitempty"`
 	CompanyStartDate          string                `json:"CompanyStartDate"`
-
-	Domain string `json:"domain"`
-	Sparse bool   `json:"sparse"`
 }
 
 type Address struct {

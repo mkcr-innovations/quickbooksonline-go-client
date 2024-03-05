@@ -1,9 +1,8 @@
 package types
 
 type Account struct {
-	Id                            string                `json:"Id"`
+	BaseEntity
 	Name                          string                `json:"Name"`
-	SyncToken                     string                `json:"SyncToken"`
 	AcctNum                       string                `json:"AcctNum"`
 	CurrencyRef                   *Ref                  `json:"CurrencyRef,omitempty"`
 	ParentRef                     *Ref                  `json:"ParentRef,omitempty"`
@@ -20,9 +19,6 @@ type Account struct {
 	TaxCodeRef                    *Ref                  `json:"TaxCodeRef,omitempty"`
 	AccountSubType                string                `json:"AccountSubType"`
 	CurrentBalance                float64               `json:"CurrentBalance"`
-
-	Domain string `json:"domain"`
-	Sparse bool   `json:"sparse"`
 }
 
 type AccountPaginatedResponse struct {
