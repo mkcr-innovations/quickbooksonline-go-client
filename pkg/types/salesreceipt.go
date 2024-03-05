@@ -12,18 +12,18 @@ type SalesReceipt struct {
 	ShipDate                *string                      `json:"ShipDate,omitempty"`                // Optional
 	TrackingNum             *string                      `json:"TrackingNum,omitempty"`             // Optional
 	ClassRef                *Ref                         `json:"ClassRef,omitempty"`                // Optional
-	PrintStatus             *string                      `json:"PrintStatus,omitempty"`             // Optional
+	PrintStatus             *PrintStatusEnum             `json:"PrintStatus,omitempty"`             // Optional
 	PaymentRefNum           *string                      `json:"PaymentRefNum,omitempty"`           // Optional, Max 21 characters
 	TxnSource               *string                      `json:"TxnSource,omitempty"`               // Optional
 	LinkedTxn               []LinkedTxn                  `json:"LinkedTxn,omitempty"`               // Optional
-	GlobalTaxCalculation    *string                      `json:"GlobalTaxCalculation,omitempty"`    // Optional
-	TransactionLocationType *string                      `json:"TransactionLocationType,omitempty"` // Optional, minorVersion: 4
+	GlobalTaxCalculation    *GlobalTaxCalculationEnum    `json:"GlobalTaxCalculation,omitempty"`    // Optional
+	TransactionLocationType *TransactionLocationTypeEnum `json:"TransactionLocationType,omitempty"` // Optional, minorVersion: 4
 	ApplyTaxAfterDiscount   *bool                        `json:"ApplyTaxAfterDiscount,omitempty"`   // Optional
 	DocNumber               *string                      `json:"DocNumber,omitempty"`               // Optional, Max 21 characters
 	PrivateNote             *string                      `json:"PrivateNote,omitempty"`             // Optional, Max 4000 characters
 	DepositToAccountRef     *Ref                         `json:"DepositToAccountRef,omitempty"`     // Optional
 	CustomerMemo            *MemoRef                     `json:"CustomerMemo,omitempty"`            // Optional
-	EmailStatus             *string                      `json:"EmailStatus,omitempty"`             // Optional
+	EmailStatus             *EmailStatusEnum             `json:"EmailStatus,omitempty"`             // Optional
 	ProjectRef              *Ref                         `json:"ProjectRef,omitempty"`              // Optional, minorVersion: 69
 	CreditCardPayment       *CreditCardPaymentForPayment `json:"CreditCardPayment,omitempty"`       // Optional
 	TxnTaxDetail            *TxnTaxDetail                `json:"TxnTaxDetail,omitempty"`            // Optional

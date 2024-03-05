@@ -16,7 +16,7 @@ type Payment struct {
 	ARAccountRef            *Ref                         `json:"ARAccountRef,omitempty"`
 	TxnDate                 *string                      `json:"TxnDate,omitempty"` // Format: YYYY-MM-DD
 	CreditCardPayment       *CreditCardPaymentForPayment `json:"CreditCardPayment,omitempty"`
-	TransactionLocationType *string                      `json:"TransactionLocationType,omitempty"` // minorVersion: 4
+	TransactionLocationType *TransactionLocationTypeEnum                      `json:"TransactionLocationType,omitempty"` // minorVersion: 4
 	MetaData                *ModificationMetaData        `json:"MetaData,omitempty"`
 	PaymentRefNum           *string                      `json:"PaymentRefNum,omitempty"`   // Conditionally Required
 	TaxExemptionRef         *Ref                         `json:"TaxExemptionRef,omitempty"` // ReadOnly, minorVersion: 21

@@ -37,3 +37,15 @@ type AttachableResponse struct {
 	BaseResponse
 	Attachable Attachable `json:"Attachable"`
 }
+
+type AttachableCategory string
+
+const (
+	AttachableCategoryContactPhoto AttachableCategory = "Contact Photo"
+	AttachableCategoryDocument     AttachableCategory = "Document"
+	AttachableCategoryImage        AttachableCategory = "Image"
+	AttachableCategoryReceipt      AttachableCategory = "Receipt"
+	AttachableCategorySignature    AttachableCategory = "Signature"
+	AttachableCategorySound        AttachableCategory = "Sound"
+	AttachableCategoryOther        AttachableCategory = "Other"
+)

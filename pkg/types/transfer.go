@@ -7,7 +7,7 @@ type Transfer struct {
 	FromAccountRef          Ref                   `json:"FromAccountRef"`                    // Required
 	PrivateNote             *string               `json:"PrivateNote,omitempty"`             // Optional, Max of 4000 chars
 	TxnDate                 *string               `json:"TxnDate,omitempty"`                 // Optional, Date
-	TransactionLocationType *string               `json:"TransactionLocationType,omitempty"` // Optional, minorVersion: 4
+	TransactionLocationType *TransactionLocationTypeEnum               `json:"TransactionLocationType,omitempty"` // Optional, minorVersion: 4
 	MetaData                *ModificationMetaData `json:"MetaData,omitempty"`                // Optional
 	RecurDataRef            *Ref                  `json:"RecurDataRef,omitempty"`            // Read only, minorVersion: 52
 }

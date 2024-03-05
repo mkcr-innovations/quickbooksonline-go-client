@@ -8,10 +8,10 @@ type Budget struct {
 	BaseEntity
 	EndDate         time.Time             `json:"EndDate"`
 	StartDate       time.Time             `json:"StartDate"`
-	BudgetEntryType *string               `json:"BudgetEntryType,omitempty"` // Optional
+	BudgetEntryType *BudgetEntryTypeEnum  `json:"BudgetEntryType,omitempty"` // Optional
 	Name            *string               `json:"Name,omitempty"`            // Optional
 	BudgetDetail    []BudgetDetail        `json:"BudgetDetail,omitempty"`    // Optional
-	BudgetType      *string               `json:"BudgetType,omitempty"`      // Optional
+	BudgetType      *BudgetTypeEnum       `json:"BudgetType,omitempty"`      // Optional
 	Active          *bool                 `json:"Active,omitempty"`          // Optional
 	MetaData        *ModificationMetaData `json:"MetaData,omitempty"`        // Optional
 }
@@ -34,3 +34,15 @@ type BudgetResponse struct {
 	BaseResponse
 	Budget Budget `json:"Budget"`
 }
+
+type BudgetEntryTypeEnum string
+
+const (
+	MonthlyBudgetEntryType   BudgetEntryTypeEnum = "Monthly"
+	QuarterlyBudgetEntryType BudgetEntryTypeEnum = "Quarterly"
+	AnnuallyBudgetEntryType  BudgetEntryTypeEnum = "Annually"
+)
+
+type BudgetTypeEnum string
+
+const ProfitAndLossBudgetType BudgetTypeEnum = "ProfitAndLoss"

@@ -18,7 +18,7 @@ type Employee struct {
 	MetaData         *ModificationMetaData `json:"MetaData,omitempty"`
 	CostRate         *float64              `json:"CostRate,omitempty"` // BigDecimal
 	Mobile           *TelephoneNumber      `json:"Mobile,omitempty"`
-	Gender           *string               `json:"Gender,omitempty"`
+	Gender           *GenderEnum           `json:"Gender,omitempty"`
 	HiredDate        *string               `json:"HiredDate,omitempty"`
 	BillRate         *float64              `json:"BillRate,omitempty"` // BigDecimal, optional
 	Organization     *bool                 `json:"Organization,omitempty"`
@@ -38,3 +38,10 @@ type EmployeeResponse struct {
 	BaseResponse
 	Employee Employee `json:"Employee"`
 }
+
+type GenderEnum string
+
+const (
+	MaleGender   GenderEnum = "Male"
+	FemaleGender GenderEnum = "Female"
+)

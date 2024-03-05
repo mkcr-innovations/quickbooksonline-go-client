@@ -9,9 +9,9 @@ type JournalEntry struct {
 	TxnDate                 *string               `json:"TxnDate,omitempty"`                 // Optional, use string for "YYYY-MM-DD"
 	ExchangeRate            *float64              `json:"ExchangeRate,omitempty"`            // Optional
 	TaxRateRef              *Ref                  `json:"TaxRateRef,omitempty"`              // Optional, minorVersion: 49
-	TransactionLocationType *string               `json:"TransactionLocationType,omitempty"` // Optional, minorVersion: 4
+	TransactionLocationType *TransactionLocationTypeEnum               `json:"TransactionLocationType,omitempty"` // Optional, minorVersion: 4
 	TxnTaxDetail            *TxnTaxDetail         `json:"TxnTaxDetail,omitempty"`            // Optional
-	GlobalTaxCalculation    *string               `json:"GlobalTaxCalculation,omitempty"`    // Optional, minorVersion: 53
+	GlobalTaxCalculation    *GlobalTaxCalculationEnum               `json:"GlobalTaxCalculation,omitempty"`    // Optional, minorVersion: 53
 	Adjustment              *bool                 `json:"Adjustment,omitempty"`              // Optional
 	MetaData                *ModificationMetaData `json:"MetaData,omitempty"`                // Optional
 	RecurDataRef            *Ref                  `json:"RecurDataRef,omitempty"`            // Read only, minorVersion: 52

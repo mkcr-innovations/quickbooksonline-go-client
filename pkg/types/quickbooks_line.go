@@ -1,14 +1,29 @@
 package types
 
+type LineDetailTypeEnum string
+
+const (
+	LineDetailAccountBasedExpense LineDetailTypeEnum = "AccountBasedExpenseLineDetail"
+	LineDetailItemBasedExpense    LineDetailTypeEnum = "ItemBasedExpenseLineDetail"
+	LineDetailSalesItem           LineDetailTypeEnum = "SalesItemLineDetail"
+	LineDetailGroup               LineDetailTypeEnum = "GroupLineDetail"
+	LineDetailDescription         LineDetailTypeEnum = "DescriptionLineDetail"
+	LineDetailDiscount            LineDetailTypeEnum = "DiscountLineDetail"
+	LineDetailSubtotal            LineDetailTypeEnum = "SubtotalLineDetail"
+	LineDetailJournalEntry        LineDetailTypeEnum = "JournalEntryLineDetail"
+	LineDetailDeposit             LineDetailTypeEnum = "DepositLineDetail"
+	LineDetailReimburse           LineDetailTypeEnum = "ReimburseLineDetail"
+)
+
 type Line struct {
-	Id          string       `json:"Id"`
-	DetailType  *string      `json:"DetailType,omitempty"` // Required except for Payment object
-	Amount      *float64     `json:"Amount,omitempty"`
-	LinkedTxn   []LinkedTxn  `json:"LinkedTxn,omitempty"`
-	Description *string      `json:"Description,omitempty"`
-	LineNum     *int         `json:"LineNum,omitempty"`
-	ProjectRef  *Ref         `json:"ProjectRef,omitempty"` // Optional, minorVersion: 69
-	CustomField *CustomField `json:"CustomField,omitempty"`
+	Id          string              `json:"Id"`
+	DetailType  *LineDetailTypeEnum `json:"DetailType,omitempty"` // Required except for Payment object
+	Amount      *float64            `json:"Amount,omitempty"`
+	LinkedTxn   []LinkedTxn         `json:"LinkedTxn,omitempty"`
+	Description *string             `json:"Description,omitempty"`
+	LineNum     *int                `json:"LineNum,omitempty"`
+	ProjectRef  *Ref                `json:"ProjectRef,omitempty"` // Optional, minorVersion: 69
+	CustomField *CustomField        `json:"CustomField,omitempty"`
 
 	AccountBasedExpenseLineDetail *AccountBasedExpenseLineDetail `json:"AccountBasedExpenseLineDetail"`
 	ItemBasedExpenseLineDetail    *ItemBasedExpenseLineDetail    `json:"ItemBasedExpenseLineDetail"`

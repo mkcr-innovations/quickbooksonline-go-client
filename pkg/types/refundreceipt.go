@@ -10,11 +10,11 @@ type RefundReceipt struct {
 	TxnDate                 *string                      `json:"TxnDate,omitempty"`
 	CustomField             []CustomField                `json:"CustomField,omitempty"`
 	ClassRef                *Ref                         `json:"ClassRef,omitempty"`
-	PrintStatus             *string                      `json:"PrintStatus,omitempty"`
+	PrintStatus             *PrintStatusEnum             `json:"PrintStatus,omitempty"`
 	CheckPayment            *CheckPayment                `json:"CheckPayment,omitempty"`
 	TxnSource               *string                      `json:"TxnSource,omitempty"`
-	GlobalTaxCalculation    *string                      `json:"GlobalTaxCalculation,omitempty"`
-	TransactionLocationType *string                      `json:"TransactionLocationType,omitempty"` // Applies to minor version 4
+	GlobalTaxCalculation    *GlobalTaxCalculationEnum    `json:"GlobalTaxCalculation,omitempty"`
+	TransactionLocationType *TransactionLocationTypeEnum `json:"TransactionLocationType,omitempty"` // Applies to minor version 4
 	MetaData                *ModificationMetaData        `json:"MetaData,omitempty"`
 	DocNumber               *string                      `json:"DocNumber,omitempty"`
 	PrivateNote             *string                      `json:"PrivateNote,omitempty"`
@@ -27,7 +27,7 @@ type RefundReceipt struct {
 	ExchangeRate            *float64                     `json:"ExchangeRate,omitempty"`
 	ShipAddr                *PhysicalAddress             `json:"ShipAddr,omitempty"`
 	DepartmentRef           *Ref                         `json:"DepartmentRef,omitempty"`
-	PaymentType             *string                      `json:"PaymentType,omitempty"`
+	PaymentType             *PaymentTypeEnum             `json:"PaymentType,omitempty"`
 	BillAddr                *PhysicalAddress             `json:"BillAddr,omitempty"`
 	ApplyTaxAfterDiscount   *bool                        `json:"ApplyTaxAfterDiscount,omitempty"`
 	HomeBalance             *float64                     `json:"HomeBalance,omitempty"`     // Read only, System defined, Applies to minor version 3
