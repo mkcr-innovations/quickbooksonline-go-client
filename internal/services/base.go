@@ -1,6 +1,9 @@
 package services
 
 import (
+	"fmt"
+	"net/http"
+
 	"github.com/mkcr-innovations/quickbooksonline-go-client/pkg/types"
 )
 
@@ -32,5 +35,19 @@ func (s *BaseService[Response, PaginatedResponse]) Query() *QueryBuilder[Paginat
 
 // Read directly fetches an entity by ID from the QuickBooks API.
 func (s *BaseService[Response, PaginatedResponse]) Read(id string) (*Response, error) {
-	return ReadHandler[Response](id, s.Entity(), s.httpClient, s.baseEndpoint)
+	url := fmt.Sprintf("%s/%s/%s", s.baseEndpoint, s.Entity(), id)
+	req, err := http.NewRequest("GET", url, nil)
+	if err != nil {
+		return nil, err
+	}
+	req.Header.Add("Accept", "application/json")
+
+	resp, err := s.httpClient.Do(req)
+	if err != nil {
+		return nil, err
+	}
+
+	var response Response
+	err = HandleResponse(resp, &response)
+	return &response, err
 }

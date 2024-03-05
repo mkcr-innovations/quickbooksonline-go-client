@@ -13,8 +13,11 @@ type Client struct {
 	httpClient types.HttpClientInterface
 
 	// Cache services
-	Account    *services.BaseService[types.AccountResponse, types.AccountPaginatedResponse]
-	Attachable *services.BaseService[types.AttachableResponse, types.AttachablePaginatedResponse]
+	Account       *services.BaseService[types.AccountResponse, types.AccountPaginatedResponse]
+	Attachable    *services.BaseService[types.AttachableResponse, types.AttachablePaginatedResponse]
+	ProfitAndLoss *services.ReportService
+	BalanceSheet  *services.ReportService
+	CashFlow      *services.ReportService
 }
 
 // baseEndpoint is the endpoint for the realm / account
@@ -54,5 +57,8 @@ func NewClient(httpClient types.HttpClientInterface, realmId string, opts ...Opt
 	// Register services
 	client.Account = services.NewBaseService[types.AccountResponse, types.AccountPaginatedResponse](client.httpClient, client.baseEndpoint(), "account")
 	client.Attachable = services.NewBaseService[types.AttachableResponse, types.AttachablePaginatedResponse](client.httpClient, client.baseEndpoint(), "attachable")
+	client.ProfitAndLoss = services.NewReportService(client.httpClient, client.baseEndpoint(), "ProfitAndLoss")
+	client.BalanceSheet = services.NewReportService(client.httpClient, client.baseEndpoint(), "BalanceSheet")
+	client.CashFlow = services.NewReportService(client.httpClient, client.baseEndpoint(), "CashFlow")
 	return &client
 }
