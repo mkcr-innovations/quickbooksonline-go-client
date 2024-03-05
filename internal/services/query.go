@@ -24,14 +24,6 @@ type QueryBuilder[R any] struct {
 	orderByClauses []string
 }
 
-func NewQueryBuilder[R any](httpClient types.HttpClientInterface, baseEndpoint string, entity string) *QueryBuilder[R] {
-	return &QueryBuilder[R]{
-		httpClient:   httpClient,
-		baseEndpoint: baseEndpoint,
-		entity:       entity,
-	}
-}
-
 // Operator type to define our enum for supported operators
 type Operator string
 
@@ -53,6 +45,14 @@ const (
 	ASC  OrderByDirection = "ASC"
 	DESC OrderByDirection = "DESC"
 )
+
+func NewQueryBuilder[R any](httpClient types.HttpClientInterface, baseEndpoint string, entity string) *QueryBuilder[R] {
+	return &QueryBuilder[R]{
+		httpClient:   httpClient,
+		baseEndpoint: baseEndpoint,
+		entity:       entity,
+	}
+}
 
 // EscapeStringValue escapes apostrophes in the string by prefixing them with a backslash
 func EscapeStringValue(value string) string {
@@ -123,7 +123,7 @@ func Condition(field string, operator Operator, value interface{}) string {
 }
 
 // Build assembles the SQL query
-func (qb *QueryBuilder[R]) Build() string {
+func (qb *QueryBuilder[R]) build() string {
 	var query = "SELECT"
 	if qb.count {
 		query = fmt.Sprintf("%s COUNT(*)", query)
@@ -155,7 +155,7 @@ func (qb *QueryBuilder[R]) Build() string {
 func (qb *QueryBuilder[R]) Exec() (*types.QueryResponse[R], error) {
 
 	data := url.Values{}
-	data.Set("query", qb.Build())
+	data.Set("query", qb.build())
 
 	url := fmt.Sprintf("%s/query?%s", qb.baseEndpoint, data.Encode())
 	req, err := http.NewRequest("GET", url, nil)
@@ -179,7 +179,7 @@ func (qb *QueryBuilder[R]) ExecCount() (*types.QueryCountResponse, error) {
 	qb.count = true
 
 	data := url.Values{}
-	data.Set("query", qb.Build())
+	data.Set("query", qb.build())
 
 	url := fmt.Sprintf("%s/query?%s", qb.baseEndpoint, data.Encode())
 	req, err := http.NewRequest("GET", url, nil)

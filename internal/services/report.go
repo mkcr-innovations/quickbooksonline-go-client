@@ -23,11 +23,6 @@ func NewReportService(httpClient types.HttpClientInterface, baseEndpoint, entity
 	}
 }
 
-// Entity returns the entity name associated with the service.
-func (s *ReportService) Entity() string {
-	return s.entity
-}
-
 // Read directly fetches an entity by ID from the QuickBooks API.
 func (s *ReportService) Query() (*types.Report, error) {
 	url := fmt.Sprintf("%s/reports/%s", s.baseEndpoint, s.entity)

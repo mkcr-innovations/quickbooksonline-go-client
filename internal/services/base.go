@@ -23,19 +23,14 @@ func NewBaseService[Response, PaginatedResponse any](httpClient types.HttpClient
 	}
 }
 
-// Entity returns the entity name associated with the service.
-func (s *BaseService[Response, PaginatedResponse]) Entity() string {
-	return s.entity
-}
-
 // Query initializes the query with the target entity.
 func (s *BaseService[Response, PaginatedResponse]) Query() *QueryBuilder[PaginatedResponse] {
-	return NewQueryBuilder[PaginatedResponse](s.httpClient, s.baseEndpoint, s.Entity())
+	return NewQueryBuilder[PaginatedResponse](s.httpClient, s.baseEndpoint, s.entity)
 }
 
 // Read directly fetches an entity by ID from the QuickBooks API.
 func (s *BaseService[Response, PaginatedResponse]) Read(id string) (*Response, error) {
-	url := fmt.Sprintf("%s/%s/%s", s.baseEndpoint, s.Entity(), id)
+	url := fmt.Sprintf("%s/%s/%s", s.baseEndpoint, s.entity, id)
 	req, err := http.NewRequest("GET", url, nil)
 	if err != nil {
 		return nil, err
