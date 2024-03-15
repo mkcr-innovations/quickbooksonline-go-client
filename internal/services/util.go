@@ -11,7 +11,6 @@ func HandleResponse(resp *http.Response, respVar interface{}) error {
 	defer resp.Body.Close()
 
 	body, err := io.ReadAll(resp.Body)
-	fmt.Println(string(body))
 	if err != nil {
 		return fmt.Errorf("failed to read response body: %v", err)
 	}
