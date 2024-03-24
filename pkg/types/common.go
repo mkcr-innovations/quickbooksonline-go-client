@@ -42,6 +42,7 @@ type ModificationMetaData struct {
 type Ref struct {
 	Name  *string `json:"name,omitempty"`
 	Value string  `json:"value"`
+	Type  string  `json:"type"`
 }
 
 type MemoRef struct {
