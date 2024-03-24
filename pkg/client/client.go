@@ -47,6 +47,7 @@ type Client struct {
 	ProfitAndLoss *services.ReportService
 	BalanceSheet  *services.ReportService
 	CashFlow      *services.ReportService
+	GeneralLedger *services.ReportService
 }
 
 // baseEndpoint is the endpoint for the realm / account
@@ -118,5 +119,6 @@ func NewClient(httpClient types.HttpClientInterface, realmId string, opts ...Opt
 	client.ProfitAndLoss = services.NewReportService(client.httpClient, client.baseEndpoint(), "ProfitAndLoss")
 	client.BalanceSheet = services.NewReportService(client.httpClient, client.baseEndpoint(), "BalanceSheet")
 	client.CashFlow = services.NewReportService(client.httpClient, client.baseEndpoint(), "CashFlow")
+	client.GeneralLedger = services.NewReportService(client.httpClient, client.baseEndpoint(), "GeneralLedger")
 	return &client
 }
