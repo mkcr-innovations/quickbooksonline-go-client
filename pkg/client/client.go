@@ -38,6 +38,7 @@ type Client struct {
 	RefundReceipt     *services.BaseService[types.RefundReceiptResponse, types.RefundReceiptPaginatedResponse]
 	ReimburseCharge   *services.BaseService[types.ReimburseChargeResponse, types.ReimburseChargePaginatedResponse]
 	SalesReceipt      *services.BaseService[types.SalesReceiptResponse, types.SalesReceiptPaginatedResponse]
+	TaxPayment        *services.BaseService[types.TaxPaymentResponse, types.TaxPaymentPaginatedResponse]
 	TaxRate           *services.BaseService[types.TaxRateResponse, types.TaxRatePaginatedResponse]
 	Transfer          *services.BaseService[types.TransferResponse, types.TransferPaginatedResponse]
 	Vendor            *services.BaseService[types.VendorResponse, types.VendorPaginatedResponse]
@@ -110,6 +111,7 @@ func NewClient(httpClient types.HttpClientInterface, realmId string, opts ...Opt
 	client.RefundReceipt = services.NewBaseService[types.RefundReceiptResponse, types.RefundReceiptPaginatedResponse](client.httpClient, client.baseEndpoint(), "refundreceipt")
 	client.ReimburseCharge = services.NewBaseService[types.ReimburseChargeResponse, types.ReimburseChargePaginatedResponse](client.httpClient, client.baseEndpoint(), "reimbursecharge")
 	client.SalesReceipt = services.NewBaseService[types.SalesReceiptResponse, types.SalesReceiptPaginatedResponse](client.httpClient, client.baseEndpoint(), "salesreceipt")
+	client.TaxPayment = services.NewBaseService[types.TaxPaymentResponse, types.TaxPaymentPaginatedResponse](client.httpClient, client.baseEndpoint(), "taxpayment")
 	client.TaxRate = services.NewBaseService[types.TaxRateResponse, types.TaxRatePaginatedResponse](client.httpClient, client.baseEndpoint(), "taxrate")
 	client.Transfer = services.NewBaseService[types.TransferResponse, types.TransferPaginatedResponse](client.httpClient, client.baseEndpoint(), "transfer")
 	client.Vendor = services.NewBaseService[types.VendorResponse, types.VendorPaginatedResponse](client.httpClient, client.baseEndpoint(), "vendor")
