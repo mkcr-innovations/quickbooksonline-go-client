@@ -44,7 +44,7 @@ type Invoice struct {
 	ApplyTaxAfterDiscount        *bool                        `json:"ApplyTaxAfterDiscount,omitempty"`
 	HomeBalance                  *float64                     `json:"HomeBalance,omitempty"`     // Read only, minorVersion: 3
 	DeliveryInfo                 *DeliveryInfo                `json:"DeliveryInfo,omitempty"`    // Read only
-	TotalAmt                     *float64                     `json:"TotalAmt,omitempty"`        // Read only, System defined
+	TotalAmt                     float64                     `json:"TotalAmt,omitempty"`        // Read only, System defined
 	InvoiceLink                  *string                      `json:"InvoiceLink,omitempty"`     // Read only, minorVersion: 36, System defined
 	RecurDataRef                 *Ref                         `json:"RecurDataRef,omitempty"`    // Read only, minorVersion: 52
 	TaxExemptionRef              *Ref                         `json:"TaxExemptionRef,omitempty"` // Read only, minorVersion: 21, System defined

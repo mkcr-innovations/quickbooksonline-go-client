@@ -16,7 +16,7 @@ type Deposit struct {
 	TxnTaxDetail            *TxnTaxDetail         `json:"TxnTaxDetail,omitempty"`            // Optional, minorVersion: 4
 	MetaData                *ModificationMetaData `json:"MetaData,omitempty"`                // Optional
 	RecurDataRef            *Ref                  `json:"RecurDataRef,omitempty"`            // Read Only, minorVersion: 52
-	TotalAmt                *float64              `json:"TotalAmt,omitempty"`                // Read Only, System Defined
+	TotalAmt                float64              `json:"TotalAmt,omitempty"`                // Read Only, System Defined
 	HomeTotalAmt            *float64              `json:"HomeTotalAmt,omitempty"`            // Read Only, System Defined
 }
 

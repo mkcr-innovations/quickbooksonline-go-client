@@ -10,7 +10,7 @@ type Bill struct {
 	SalesTermRef            *Ref                         `json:"SalesTermRef,omitempty"`
 	LinkedTxn               []LinkedTxn                  `json:"LinkedTxn,omitempty"`
 	GlobalTaxCalculation    *GlobalTaxCalculationEnum    `json:"GlobalTaxCalculation,omitempty"`
-	TotalAmt                *float64                     `json:"TotalAmt,omitempty"`
+	TotalAmt                float64                     `json:"TotalAmt,omitempty"`
 	TransactionLocationType *TransactionLocationTypeEnum `json:"TransactionLocationType,omitempty"`
 	DueDate                 *string                      `json:"DueDate,omitempty"`
 	MetaData                *ModificationMetaData        `json:"MetaData,omitempty"`

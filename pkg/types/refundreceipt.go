@@ -32,7 +32,7 @@ type RefundReceipt struct {
 	ApplyTaxAfterDiscount   *bool                        `json:"ApplyTaxAfterDiscount,omitempty"`
 	HomeBalance             *float64                     `json:"HomeBalance,omitempty"`     // Read only, System defined, Applies to minor version 3
 	RecurDataRef            *Ref                         `json:"RecurDataRef,omitempty"`    // Read only, System defined, Applies to minor version 52
-	TotalAmt                *float64                     `json:"TotalAmt,omitempty"`        // Read only, System defined
+	TotalAmt                float64                     `json:"TotalAmt,omitempty"`        // Read only, System defined
 	TaxExemptionRef         *Ref                         `json:"TaxExemptionRef,omitempty"` // Read only, System defined, Applies to minor version 21
 	Balance                 *float64                     `json:"Balance,omitempty"`         // Read only, System defined
 	HomeTotalAmt            *float64                     `json:"HomeTotalAmt,omitempty"`    // Read only, System defined

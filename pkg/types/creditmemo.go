@@ -12,7 +12,7 @@ type CreditMemo struct {
 	PrintStatus             *PrintStatusEnum             `json:"PrintStatus,omitempty"`             // Optional
 	SalesTermRef            *Ref                         `json:"SalesTermRef,omitempty"`            // Optional
 	GlobalTaxCalculation    *GlobalTaxCalculationEnum    `json:"GlobalTaxCalculation,omitempty"`    // Optional
-	TotalAmt                *float64                     `json:"TotalAmt,omitempty"`                // Optional
+	TotalAmt                float64                     `json:"TotalAmt,omitempty"`                // Optional
 	InvoiceRef              *Ref                         `json:"InvoiceRef,omitempty"`              // Optional, minorVersion: 37
 	TransactionLocationType *TransactionLocationTypeEnum `json:"TransactionLocationType,omitempty"` // Optional, minorVersion: 4
 	ApplyTaxAfterDiscount   *bool                        `json:"ApplyTaxAfterDiscount,omitempty"`   // Optional

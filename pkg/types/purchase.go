@@ -23,7 +23,7 @@ type Purchase struct {
 	DepartmentRef           *Ref                         `json:"DepartmentRef,omitempty"`           // Optional
 	EntityRef               *Ref                         `json:"EntityRef,omitempty"`               // Optional
 	IncludeInAnnualTPAR     *bool                        `json:"IncludeInAnnualTPAR,omitempty"`     // Optional, minorVersion: 40
-	TotalAmt                *float64                     `json:"TotalAmt,omitempty"`                // Read only, system defined
+	TotalAmt                float64                     `json:"TotalAmt,omitempty"`                // Read only, system defined
 	RecurDataRef            *Ref                         `json:"RecurDataRef,omitempty"`            // Read only, minorVersion: 52
 }
 

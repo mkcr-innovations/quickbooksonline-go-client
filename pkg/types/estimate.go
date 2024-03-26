@@ -34,7 +34,7 @@ type Estimate struct {
 	ShipMethodRef           *Ref                         `json:"ShipMethodRef,omitempty"`           // Optional
 	BillAddr                *PhysicalAddress             `json:"BillAddr,omitempty"`                // Optional
 	ApplyTaxAfterDiscount   *bool                        `json:"ApplyTaxAfterDiscount,omitempty"`   // Optional
-	TotalAmt                *float64                     `json:"TotalAmt,omitempty"`                // Read only, System defined
+	TotalAmt                float64                     `json:"TotalAmt,omitempty"`                // Read only, System defined
 	RecurDataRef            *Ref                         `json:"RecurDataRef,omitempty"`            // Read only, minorVersion: 52
 	TaxExemptionRef         *Ref                         `json:"TaxExemptionRef,omitempty"`         // Read only, minorVersion: 21
 	HomeTotalAmt            *float64                     `json:"HomeTotalAmt,omitempty"`            // Read only, System defined
