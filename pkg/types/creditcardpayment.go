@@ -16,10 +16,10 @@ type CreditCardPayment struct {
 
 type CreditCardPaymentPaginatedResponse struct {
 	BasePaginatedResponse
-	CreditCardPayment []CreditCardPayment `json:"CreditCardPayment"`
+	CreditCardPayment []CreditCardPayment `json:"CreditCardPaymentTxn"`
 }
 
 type CreditCardPaymentResponse struct {
 	BaseResponse
-	CreditCardPayment CreditCardPayment `json:"CreditCardPayment"`
+	CreditCardPayment CreditCardPayment `json:"CreditCardPaymentTxn"`
 }
