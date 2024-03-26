@@ -7,7 +7,7 @@ type SalesReceipt struct {
 	ShipFromAddr            *PhysicalAddress             `json:"ShipFromAddr,omitempty"`            // Conditionally required, minorVersion: 35
 	CurrencyRef             *Ref                         `json:"CurrencyRef,omitempty"`             // Conditionally required
 	BillEmail               *EmailAddress                `json:"BillEmail,omitempty"`               // Conditionally required
-	TxnDate                 *string                      `json:"TxnDate,omitempty"`                 // Optional
+	TxnDate                 string                      `json:"TxnDate,omitempty"`                 // Optional
 	CustomField             []CustomField                `json:"CustomField,omitempty"`             // Optional
 	ShipDate                *string                      `json:"ShipDate,omitempty"`                // Optional
 	TrackingNum             *string                      `json:"TrackingNum,omitempty"`             // Optional

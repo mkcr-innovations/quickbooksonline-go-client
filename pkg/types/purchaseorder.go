@@ -6,7 +6,7 @@ type PurchaseOrder struct {
 	VendorRef               Ref                          `json:"VendorRef"`
 	Line                    []Line                       `json:"Line"`
 	CurrencyRef             *Ref                         `json:"CurrencyRef,omitempty"` // Conditionally required, treated as optional.
-	TxnDate                 *string                      `json:"TxnDate,omitempty"`
+	TxnDate                 string                      `json:"TxnDate,omitempty"`
 	CustomField             []CustomField                `json:"CustomField,omitempty"`
 	POEmail                 *EmailAddress                `json:"POEmail,omitempty"` // Applies to minorVersion 17
 	ClassRef                *Ref                         `json:"ClassRef,omitempty"`

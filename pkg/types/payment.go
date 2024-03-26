@@ -14,7 +14,7 @@ type Payment struct {
 	ProjectRef              *Ref                         `json:"ProjectRef,omitempty"` // minorVersion: 69
 	TxnSource               *string                      `json:"TxnSource,omitempty"`
 	ARAccountRef            *Ref                         `json:"ARAccountRef,omitempty"`
-	TxnDate                 *string                      `json:"TxnDate,omitempty"` // Format: YYYY-MM-DD
+	TxnDate                 string                      `json:"TxnDate,omitempty"` // Format: YYYY-MM-DD
 	CreditCardPayment       *CreditCardPaymentForPayment `json:"CreditCardPayment,omitempty"`
 	TransactionLocationType *TransactionLocationTypeEnum                      `json:"TransactionLocationType,omitempty"` // minorVersion: 4
 	MetaData                *ModificationMetaData        `json:"MetaData,omitempty"`

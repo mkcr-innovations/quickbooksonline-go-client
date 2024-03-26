@@ -6,7 +6,7 @@ type CreditMemo struct {
 	CustomerRef             Ref                          `json:"CustomerRef"`                       // Required
 	CurrencyRef             *Ref                         `json:"CurrencyRef,omitempty"`             // Conditionally required
 	BillEmail               *EmailAddress                `json:"BillEmail,omitempty"`               // Conditionally required
-	TxnDate                 *string                      `json:"TxnDate,omitempty"`                 // Optional, format "YYYY-MM-DD"
+	TxnDate                 string                      `json:"TxnDate,omitempty"`                 // Optional, format "YYYY-MM-DD"
 	CustomField             []CustomField                `json:"CustomField,omitempty"`             // Optional
 	ClassRef                *Ref                         `json:"ClassRef,omitempty"`                // Optional
 	PrintStatus             *PrintStatusEnum             `json:"PrintStatus,omitempty"`             // Optional

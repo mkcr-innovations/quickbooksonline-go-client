@@ -6,7 +6,7 @@ type Estimate struct {
 	ShipFromAddr            *PhysicalAddress             `json:"ShipFromAddr,omitempty"`            // Conditionally required, minorVersion: 35
 	CurrencyRef             Ref                          `json:"CurrencyRef"`                       // Conditionally required
 	BillEmail               EmailAddress                 `json:"BillEmail"`                         // Conditionally required
-	TxnDate                 *string                      `json:"TxnDate,omitempty"`                 // Optional
+	TxnDate                 string                      `json:"TxnDate,omitempty"`                 // Optional
 	ShipDate                *string                      `json:"ShipDate,omitempty"`                // Optional, format: YYYY-MM-DD
 	ClassRef                *Ref                         `json:"ClassRef,omitempty"`                // Optional
 	PrintStatus             *PrintStatusEnum             `json:"PrintStatus,omitempty"`             // Optional

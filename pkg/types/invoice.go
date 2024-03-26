@@ -12,7 +12,7 @@ type Invoice struct {
 	CurrencyRef                  Ref                          `json:"CurrencyRef"`
 	DocNumber                    string                       `json:"DocNumber"`
 	BillEmail                    EmailAddress                 `json:"BillEmail"`
-	TxnDate                      *string                      `json:"TxnDate,omitempty"`  // Format: YYYY-MM-DD
+	TxnDate                      string                      `json:"TxnDate,omitempty"`  // Format: YYYY-MM-DD
 	ShipDate                     *string                      `json:"ShipDate,omitempty"` // Format: YYYY-MM-DD
 	TrackingNum                  *string                      `json:"TrackingNum,omitempty"`
 	ClassRef                     *Ref                         `json:"ClassRef,omitempty"`

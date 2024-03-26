@@ -5,7 +5,7 @@ type Bill struct {
 	VendorRef               Ref                          `json:"VendorRef"`
 	Line                    []Line                       `json:"Line"`
 	CurrencyRef             Ref                          `json:"CurrencyRef"`
-	TxnDate                 *string                      `json:"TxnDate,omitempty"`
+	TxnDate                 string                      `json:"TxnDate,omitempty"`
 	APAccountRef            *Ref                         `json:"APAccountRef,omitempty"`
 	SalesTermRef            *Ref                         `json:"SalesTermRef,omitempty"`
 	LinkedTxn               []LinkedTxn                  `json:"LinkedTxn,omitempty"`

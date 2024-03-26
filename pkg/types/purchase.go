@@ -6,7 +6,7 @@ type Purchase struct {
 	PaymentType             PaymentTypeEnum              `json:"PaymentType"`                       // Required
 	AccountRef              Ref                          `json:"AccountRef"`                        // Required
 	CurrencyRef             *Ref                         `json:"CurrencyRef,omitempty"`             // Conditionally required
-	TxnDate                 *string                      `json:"TxnDate,omitempty"`                 // Optional, format YYYY-MM-DD
+	TxnDate                 string                      `json:"TxnDate,omitempty"`                 // Optional, format YYYY-MM-DD
 	PrintStatus             *PrintStatusEnum             `json:"PrintStatus,omitempty"`             // Optional
 	RemitToAddr             *PhysicalAddress             `json:"RemitToAddr,omitempty"`             // Optional, read only
 	TxnSource               *string                      `json:"TxnSource,omitempty"`               // Optional

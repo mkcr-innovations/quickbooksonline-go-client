@@ -6,7 +6,7 @@ type JournalEntry struct {
 	CurrencyRef             *Ref                  `json:"CurrencyRef,omitempty"`             // Conditionally required
 	DocNumber               *string               `json:"DocNumber,omitempty"`               // Optional
 	PrivateNote             *string               `json:"PrivateNote,omitempty"`             // Optional
-	TxnDate                 *string               `json:"TxnDate,omitempty"`                 // Optional, use string for "YYYY-MM-DD"
+	TxnDate                 string               `json:"TxnDate,omitempty"`                 // Optional, use string for "YYYY-MM-DD"
 	ExchangeRate            *float64              `json:"ExchangeRate,omitempty"`            // Optional
 	TaxRateRef              *Ref                  `json:"TaxRateRef,omitempty"`              // Optional, minorVersion: 49
 	TransactionLocationType *TransactionLocationTypeEnum               `json:"TransactionLocationType,omitempty"` // Optional, minorVersion: 4

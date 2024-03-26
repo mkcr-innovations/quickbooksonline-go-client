@@ -7,7 +7,7 @@ type RefundReceipt struct {
 	CurrencyRef             *Ref                         `json:"CurrencyRef,omitempty"`   // Conditionally required
 	PaymentRefNum           *string                      `json:"PaymentRefNum,omitempty"` // Conditionally required
 	BillEmail               *EmailAddress                `json:"BillEmail,omitempty"`     // Conditionally required
-	TxnDate                 *string                      `json:"TxnDate,omitempty"`
+	TxnDate                 string                      `json:"TxnDate,omitempty"`
 	CustomField             []CustomField                `json:"CustomField,omitempty"`
 	ClassRef                *Ref                         `json:"ClassRef,omitempty"`
 	PrintStatus             *PrintStatusEnum             `json:"PrintStatus,omitempty"`

@@ -10,7 +10,7 @@ type Deposit struct {
 	ExchangeRate            *float64              `json:"ExchangeRate,omitempty"`            // Optional
 	DepartmentRef           *Ref                  `json:"DepartmentRef,omitempty"`           // Optional
 	TxnSource               *string               `json:"TxnSource,omitempty"`               // Optional
-	TxnDate                 *string               `json:"TxnDate,omitempty"`                 // Optional, Date
+	TxnDate                 string               `json:"TxnDate,omitempty"`                 // Optional, Date
 	CashBack                *CashBackInfo         `json:"CashBack,omitempty"`                // Optional
 	TransactionLocationType *TransactionLocationTypeEnum               `json:"TransactionLocationType,omitempty"` // Optional, minorVersion: 4
 	TxnTaxDetail            *TxnTaxDetail         `json:"TxnTaxDetail,omitempty"`            // Optional, minorVersion: 4

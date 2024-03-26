@@ -9,7 +9,7 @@ type BillPayment struct {
 	CurrencyRef             *Ref                         `json:"CurrencyRef,omitempty"` // Conditionally required
 	DocNumber               *string                      `json:"DocNumber,omitempty"`
 	PrivateNote             *string                      `json:"PrivateNote,omitempty"`
-	TxnDate                 *string                      `json:"TxnDate,omitempty"` // Use string for "YYYY-MM-DD"
+	TxnDate                 string                      `json:"TxnDate,omitempty"` // Use string for "YYYY-MM-DD"
 	ExchangeRate            *float64                     `json:"ExchangeRate,omitempty"`
 	APAccountRef            *Ref                         `json:"APAccountRef,omitempty"`
 	DepartmentRef           *Ref                         `json:"DepartmentRef,omitempty"`

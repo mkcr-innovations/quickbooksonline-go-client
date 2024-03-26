@@ -12,7 +12,7 @@ type VendorCredit struct {
 	ExchangeRate            *float64                     `json:"ExchangeRate,omitempty"`            // Optional
 	APAccountRef            *Ref                         `json:"APAccountRef,omitempty"`            // Optional
 	DepartmentRef           *Ref                         `json:"DepartmentRef,omitempty"`           // Optional
-	TxnDate                 *string                      `json:"TxnDate,omitempty"`                 // Optional, using string for date "YYYY-MM-DD"
+	TxnDate                 string                      `json:"TxnDate,omitempty"`                 // Optional, using string for date "YYYY-MM-DD"
 	IncludeInAnnualTPAR     *bool                        `json:"IncludeInAnnualTPAR,omitempty"`     // Optional, applies to specific minorversion
 	TransactionLocationType *TransactionLocationTypeEnum `json:"TransactionLocationType,omitempty"` // Optional, applies to specific minorversion
 	Balance                 *float64                     `json:"Balance,omitempty"`                 // Optional, read-only, applies to specific minorversion
