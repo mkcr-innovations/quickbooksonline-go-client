@@ -5,12 +5,12 @@ type Bill struct {
 	VendorRef               Ref                          `json:"VendorRef"`
 	Line                    []Line                       `json:"Line"`
 	CurrencyRef             Ref                          `json:"CurrencyRef"`
-	TxnDate                 string                      `json:"TxnDate,omitempty"`
+	TxnDate                 string                       `json:"TxnDate,omitempty"`
 	APAccountRef            *Ref                         `json:"APAccountRef,omitempty"`
 	SalesTermRef            *Ref                         `json:"SalesTermRef,omitempty"`
 	LinkedTxn               []LinkedTxn                  `json:"LinkedTxn,omitempty"`
 	GlobalTaxCalculation    *GlobalTaxCalculationEnum    `json:"GlobalTaxCalculation,omitempty"`
-	TotalAmt                float64                     `json:"TotalAmt,omitempty"`
+	TotalAmt                float64                      `json:"TotalAmt,omitempty"`
 	TransactionLocationType *TransactionLocationTypeEnum `json:"TransactionLocationType,omitempty"`
 	DueDate                 *string                      `json:"DueDate,omitempty"`
 	MetaData                *ModificationMetaData        `json:"MetaData,omitempty"`
